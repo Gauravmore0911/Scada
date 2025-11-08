@@ -1,0 +1,30 @@
+version: "3.8"
+
+services:
+  backend:
+    build:
+      context: ./backend
+    container_name: network_backend
+    ports:
+      - "12000:12000"
+    env_file:
+      - ./backend/.env
+    volumes:
+      - ./backend/machines.yml:/usr/src/app/machines.yml 
+    networks:
+      - network_app
+
+  frontend:
+    container_name: network_frontend
+    ports:
+      - "3000:80"
+    env_file:
+      - ./frontend/.env
+    depends_on:
+      - backend
+    networks:
+      - network_app
+
+networks:
+  network_app:
+    driver: bridge

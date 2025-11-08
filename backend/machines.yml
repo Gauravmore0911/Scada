@@ -1,0 +1,955 @@
+machines:
+  - name: OFMK-4733
+    ip: 172.41.112.205
+    gateway: 172.41.113.205
+    kiosk_pc: 172.41.111.205
+    uplink: A12-5
+    source_switch: A3-5
+    column: 3
+    bay: A
+    section: HTM
+  - name: OFMK-1256
+    ip: 172.41.112.200
+    gateway: 172.41.113.200
+    kiosk_pc: 172.41.111.200
+    uplink: Switch-1
+    source_switch: Switch-2
+    column: 5
+    bay: Bay-5
+    section: HTM
+  - name: OFMK-1731
+    ip: 172.41.112.201
+    gateway: 172.41.113.201
+    kiosk_pc: 172.41.111.201
+    uplink: B15-5
+    source_switch: B8-8
+    column: 8
+    bay: B
+    section: HTM
+  - name: OFMK-2328
+    ip: 172.41.112.202
+    gateway: 172.41.113.202
+    kiosk_pc: 172.41.111.202
+    uplink: A12-5
+    source_switch: A3-5
+    column: 3
+    bay: A
+    section: HTM
+  - name: OFMK-4624
+    ip: 172.41.112.203
+    gateway: 172.41.113.203
+    kiosk_pc: 172.41.111.203
+    uplink: HTMG1
+    source_switch: B22-5
+    column: 22
+    bay: B
+    section: HTM
+  - name: OFMK-4630
+    ip: 172.41.112.204
+    gateway: 172.41.113.204
+    kiosk_pc: 172.41.111.204
+    uplink: Switch-3
+    source_switch: Switch-4
+    column: 6
+    bay: Bay-6
+    section: HTM
+  - name: OFMK-4633
+    ip: 172.41.112.205
+    gateway: 172.41.113.205
+    kiosk_pc: 172.41.111.205
+    uplink: Switch-3
+    source_switch: Switch-4
+    column: 6
+    bay: Bay-6
+    section: HTM
+  - name: OFMK-4777
+    ip: 172.41.112.206
+    gateway: 172.41.113.206
+    kiosk_pc: 172.41.111.206
+    uplink: A18-5
+    source_switch: A15-5
+    column: 15
+    bay: A
+    section: HTM
+  - name: OFMK-4784
+    ip: 172.41.112.207
+    gateway: 172.41.113.207
+    kiosk_pc: 172.41.111.207
+    uplink: A12-5
+    source_switch: A3-5
+    column: 3
+    bay: A
+    section: HTM
+  - name: OFMK-4814
+    ip: 172.41.112.208
+    gateway: 172.41.113.208
+    kiosk_pc: 172.41.111.208
+    uplink: HTMG1
+    source_switch: B22-5
+    column: 22
+    bay: B
+    section: HTM
+  - name: OFMK-4827
+    ip: 172.41.112.209
+    gateway: 172.41.113.209
+    kiosk_pc: 172.41.111.209
+    uplink: A18-5
+    source_switch: A15-5
+    column: 15
+    bay: A
+    section: HTM
+  - name: OFMK-4828
+    ip: 172.41.112.210
+    gateway: 172.41.113.210
+    kiosk_pc: 172.41.111.210
+    uplink: B8-8
+    source_switch: C8-5
+    column: 8
+    bay: C
+    section: HTM
+  - name: OFMK-4831
+    ip: 172.41.112.211
+    gateway: 172.41.113.211
+    kiosk_pc: 172.41.111.211
+    uplink: B15-5
+    source_switch: B8-8
+    column: 8
+    bay: B
+    section: HTM
+  - name: OFMK-4832
+    ip: 172.41.112.212
+    gateway: 172.41.113.212
+    kiosk_pc: 172.41.111.212
+    uplink: B15-5
+    source_switch: B8-8
+    column: 8
+    bay: B
+    section: HTM
+  - name: OFMK-4851
+    ip: 172.41.112.213
+    gateway: 172.41.113.213
+    kiosk_pc: 172.41.111.213
+    uplink: B15-5
+    source_switch: B8-8
+    column: 8
+    bay: B
+    section: HTM
+  - name: OFMK-4853
+    ip: 172.41.112.214
+    gateway: 172.41.113.214
+    kiosk_pc: 172.41.111.214
+    uplink: A15-5
+    source_switch: B15-5
+    column: B
+    bay: 15
+    section: HTM
+  - name: OFMK-4900
+    ip: 172.41.112.215
+    gateway: 172.41.113.215
+    kiosk_pc: 172.41.111.215
+    uplink: HTMG1
+    source_switch: B22-5
+    column: 22
+    bay: B
+    section: HTM
+  - name: OFMK-4901
+    ip: 172.41.112.216
+    gateway: 172.41.113.216
+    kiosk_pc: 172.41.111.216
+    uplink: B15-5
+    source_switch: B8-8
+    column: 8
+    bay: B
+    section: HTM
+  - name: OFMK-4902
+    ip: 172.41.112.217
+    gateway: 172.41.113.217
+    kiosk_pc: 172.41.111.217
+    uplink: A15-5
+    source_switch: A12-5
+    column: 12
+    bay: A
+    section: HTM
+  - name: OFMK-4915
+    ip: 172.41.112.218
+    gateway: 172.41.113.218
+    kiosk_pc: 172.41.111.218
+    uplink: HTMG1
+    source_switch: A22-5
+    column: 22
+    bay: A
+    section: HTM
+  - name: OFMK-4916
+    ip: 172.41.112.219
+    gateway: 172.41.113.219
+    kiosk_pc: 172.41.111.219
+    uplink: B15-5
+    source_switch: B8-8
+    column: 8
+    bay: B
+    section: HTM
+  - name: OFMK-4917
+    ip: 172.41.112.220
+    gateway: 172.41.113.220
+    kiosk_pc: 172.41.111.220
+    uplink: HTMG1
+    source_switch: B22-5
+    column: 22
+    bay: B
+    section: HTM
+  - name: OFMK-4928
+    ip: 172.41.112.221
+    gateway: 172.41.113.221
+    kiosk_pc: 172.41.111.221
+    uplink: Switch-3
+    source_switch: Switch-4
+    column: 6
+    bay: Bay-6
+    section: HTM
+  - name: OFMK-4929
+    ip: 172.41.112.222
+    gateway: 172.41.113.222
+    kiosk_pc: 172.41.111.222
+    uplink: A22-5
+    source_switch: A18-5
+    column: 18
+    bay: A
+    section: HTM
+  - name: OFMK-4930
+    ip: 172.41.112.223
+    gateway: 172.41.113.223
+    kiosk_pc: 172.41.111.223
+    uplink: A15-5
+    source_switch: A12-5
+    column: 12
+    bay: A
+    section: HTM
+  - name: OFMK-4961
+    ip: 172.41.112.224
+    gateway: 172.41.113.224
+    kiosk_pc: 172.41.111.224
+    uplink: A15-5
+    source_switch: A12-5
+    column: 12
+    bay: A
+    section: HTM
+  - name: OFMK-5123
+    ip: 172.41.112.225
+    gateway: 172.41.113.225
+    kiosk_pc: 172.41.111.225
+    uplink: A18-5
+    source_switch: A15-5
+    column: 15
+    bay: A
+    section: HTM
+  - name: OFMK-NEWASKAR
+    ip: 172.41.112.226
+    gateway: 172.41.113.226
+    kiosk_pc: 172.41.111.226
+    uplink: B8-8
+    source_switch: C8-5
+    column: 8
+    bay: C
+    section: HTM
+  - name: OFMK-4747
+    ip: 172.41.112.21
+    gateway: 172.41.113.21
+    kiosk_pc: 172.41.111.21
+    uplink: Switch-3
+    source_switch: Switch-4
+    column: 6
+    bay: Bay-6
+    section: SMS
+  - name: OFMK-824
+    ip: 172.41.112.50
+    gateway: 172.41.113.50
+    kiosk_pc: 172.41.111.50
+    uplink: Switch-3
+    source_switch: Switch-4
+    column: 6
+    bay: Bay-6
+    section: Tool
+  - name: OFMK-1408
+    ip: 172.41.112.51
+    gateway: 172.41.113.51
+    kiosk_pc: 172.41.111.51
+    uplink: Switch-3
+    source_switch: Switch-4
+    column: 6
+    bay: Bay-6
+    section: Tool
+  - name: OFMK-1423
+    ip: 172.41.112.52
+    gateway: 172.41.113.52
+    kiosk_pc: 172.41.111.52
+    uplink: Switch-3
+    source_switch: Switch-4
+    column: 6
+    bay: Bay-6
+    section: Tool
+  - name: OFMK-4513
+    ip: 172.41.112.53
+    gateway: 172.41.113.53
+    kiosk_pc: 172.41.111.53
+    uplink: Switch-3
+    source_switch: Switch-4
+    column: 6
+    bay: Bay-6
+    section: Tool
+  - name: OFMK-4740
+    ip: 172.41.112.54
+    gateway: 172.41.113.54
+    kiosk_pc: 172.41.111.54
+    uplink: Switch-3
+    source_switch: Switch-4
+    column: 6
+    bay: Bay-6
+    section: Tool
+  - name: OFMK-4772
+    ip: 172.41.112.55
+    gateway: 172.41.113.55
+    kiosk_pc: 172.41.111.55
+    uplink: Switch-3
+    source_switch: Switch-4
+    column: 6
+    bay: Bay-6
+    section: Tool
+  - name: OFMK-4773
+    ip: 172.41.112.56
+    gateway: 172.41.113.56
+    kiosk_pc: 172.41.111.56
+    uplink: Switch-3
+    source_switch: Switch-4
+    column: 6
+    bay: Bay-6
+    section: Tool
+  - name: OFMK-4957
+    ip: 172.41.112.57
+    gateway: 172.41.113.57
+    kiosk_pc: 172.41.111.57
+    uplink: Switch-3
+    source_switch: Switch-4
+    column: 6
+    bay: Bay-6
+    section: Tool
+  - name: OFMK-4977
+    ip: 172.41.112.58
+    gateway: 172.41.113.58
+    kiosk_pc: 172.41.111.58
+    uplink: Switch-3
+    source_switch: Switch-4
+    column: 6
+    bay: Bay-6
+    section: Tool
+  - name: OFMK-4980
+    ip: 172.41.112.59
+    gateway: 172.41.113.59
+    kiosk_pc: 172.41.111.59
+    uplink: Switch-3
+    source_switch: Switch-4
+    column: 6
+    bay: Bay-6
+    section: Tool
+  - name: OFMK-4981
+    ip: 172.41.112.60
+    gateway: 172.41.113.60
+    kiosk_pc: 172.41.111.60
+    uplink: Switch-3
+    source_switch: Switch-4
+    column: 6
+    bay: Bay-6
+    section: Tool
+  - name: OFMK-4982
+    ip: 172.41.112.61
+    gateway: 172.41.113.61
+    kiosk_pc: 172.41.111.61
+    uplink: Switch-3
+    source_switch: Switch-4
+    column: 6
+    bay: Bay-6
+    section: Tool
+  - name: OFMK-5005
+    ip: 172.41.112.62
+    gateway: 172.41.113.62
+    kiosk_pc: 172.41.111.62
+    uplink: Switch-3
+    source_switch: Switch-4
+    column: 6
+    bay: Bay-6
+    section: Tool
+  - name: OFMK-2705LH
+    ip: 172.41.112.227
+    gateway: 172.41.113.227
+    kiosk_pc: 172.41.111.227
+    uplink: E14-5 -> D14-5
+    source_switch: E17-5
+    column: 17
+    bay: E
+    section: Hull
+  - name: OFMK-2705RH
+    ip: 172.41.112.228
+    gateway: 172.41.113.228
+    kiosk_pc: 172.41.111.228
+    uplink: E14-5 -> D14-5
+    source_switch: E17-5
+    column: 17
+    bay: E
+    section: Hull
+  - name: OFMK-2706LH
+    ip: 172.41.112.229
+    gateway: 172.41.113.229
+    kiosk_pc: 172.41.111.229
+    uplink: B15-5
+    source_switch: D14-5
+    column: 14
+    bay: D
+    section: Hull
+  - name: OFMK-2706RH
+    ip: 172.41.112.230
+    gateway: 172.41.113.230
+    kiosk_pc: 172.41.111.230
+    uplink: B15-5
+    source_switch: D14-5
+    column: 14
+    bay: D
+    section: Hull
+  - name: OFMK-1209LH
+    ip: 172.41.112.231
+    gateway: 172.41.113.231
+    kiosk_pc: 172.41.111.231
+    uplink: C8-5
+    source_switch: D7-5
+    column: 7
+    bay: D
+    section: Hull
+  - name: OFMK-1209RH
+    ip: 172.41.112.232
+    gateway: 172.41.113.232
+    kiosk_pc: 172.41.111.232
+    uplink: C8-5
+    source_switch: D7-5
+    column: 7
+    bay: D
+    section: Hull
+  - name: OFMK-2060
+    ip: 172.41.112.233
+    gateway: 172.41.113.233
+    kiosk_pc: 172.41.111.233
+    uplink: B15-5
+    source_switch: D14-5
+    column: 14
+    bay: D
+    section: Hull
+  - name: OFMK-2108
+    ip: 172.41.112.234
+    gateway: 172.41.113.234
+    kiosk_pc: 172.41.111.234
+    uplink: G5-5
+    source_switch: H5-5
+    column: 5
+    bay: H
+    section: Turret
+  - name: OFMK-2109
+    ip: 172.41.112.235
+    gateway: 172.41.113.235
+    kiosk_pc: 172.41.111.235
+    uplink: G5-5
+    source_switch: H5-5
+    column: 5
+    bay: H
+    section: Turret
+  - name: OFMK-2584
+    ip: 172.41.112.236
+    gateway: 172.41.113.236
+    kiosk_pc: 172.41.111.236
+    uplink: C8-5
+    source_switch: G5-5
+    column: 5
+    bay: G
+    section: Turret
+  - name: OFMK-3090
+    ip: 172.41.112.237
+    gateway: 172.41.113.237
+    kiosk_pc: 172.41.111.237
+    uplink: C8-5
+    source_switch: G5-5
+    column: 5
+    bay: G
+    section: Turret
+  - name: OFMK-4474
+    ip: 172.41.112.238
+    gateway: 172.41.113.238
+    kiosk_pc: 172.41.111.238
+    uplink: C8-5
+    source_switch: G5-5
+    column: 5
+    bay: G
+    section: Turret
+  - name: OFMK-4361
+    ip: 172.41.112.239
+    gateway: 172.41.113.239
+    kiosk_pc: 172.41.111.239
+    uplink: Switch-3
+    source_switch: Switch-4
+    column: 6
+    bay: Bay-6
+    section: Turret
+  - name: OFMK-4668
+    ip: 172.41.112.126
+    gateway: 172.41.113.126
+    kiosk_pc: 172.41.111.126
+    uplink: Switch-3
+    source_switch: Switch-4
+    column: 6
+    bay: Bay-6
+    section: LMS
+  - name: OFMK-4741
+    ip: 172.41.112.124
+    gateway: 172.41.113.124
+    kiosk_pc: 172.41.111.124
+    uplink: Switch-3
+    source_switch: Switch-4
+    column: 6
+    bay: Bay-6
+    section: LMS
+  - name: OFMK-4742
+    ip: 172.41.112.123
+    gateway: 172.41.113.123
+    kiosk_pc: 172.41.111.123
+    uplink: Switch-3
+    source_switch: Switch-4
+    column: 6
+    bay: Bay-6
+    section: LMS
+  - name: OFMK-4534
+    ip: 172.41.112.134
+    gateway: 172.41.113.134
+    kiosk_pc: 172.41.111.134
+    uplink: Switch-3
+    source_switch: Switch-4
+    column: 6
+    bay: Bay-6
+    section: LMS
+  - name: OFMK-4536
+    ip: 172.41.112.135
+    gateway: 172.41.113.135
+    kiosk_pc: 172.41.111.135
+    uplink: Switch-3
+    source_switch: Switch-4
+    column: 6
+    bay: Bay-6
+    section: LMS
+  - name: OFMK-4538
+    ip: 172.41.112.136
+    gateway: 172.41.113.136
+    kiosk_pc: 172.41.111.136
+    uplink: Switch-3
+    source_switch: Switch-4
+    column: 6
+    bay: Bay-6
+    section: LMS
+  - name: OFMK-4833
+    ip: 172.41.112.127
+    gateway: 172.41.113.127
+    kiosk_pc: 172.41.111.127
+    uplink: Switch-3
+    source_switch: Switch-4
+    column: 6
+    bay: Bay-6
+    section: LMS
+  - name: OFMK-4830
+    ip: 172.41.112.140
+    gateway: 172.41.113.140
+    kiosk_pc: 172.41.111.140
+    uplink: Switch-3
+    source_switch: Switch-4
+    column: 6
+    bay: Bay-6
+    section: LMS
+  - name: OFMK-4600
+    ip: 172.41.112.130
+    gateway: 172.41.113.130
+    kiosk_pc: 172.41.111.130
+    uplink: Switch-3
+    source_switch: Switch-4
+    column: 6
+    bay: Bay-6
+    section: LMS
+  - name: OFMK-4717
+    ip: 172.41.112.122
+    gateway: 172.41.113.122
+    kiosk_pc: 172.41.111.122
+    uplink: Switch-3
+    source_switch: Switch-4
+    column: 6
+    bay: Bay-6
+    section: LMS
+  - name: OFMK-4716
+    ip: 172.41.112.121
+    gateway: 172.41.113.121
+    kiosk_pc: 172.41.111.121
+    uplink: Switch-3
+    source_switch: Switch-4
+    column: 6
+    bay: Bay-6
+    section: LMS
+  - name: OFMK-4601
+    ip: 172.41.112.120
+    gateway: 172.41.113.120
+    kiosk_pc: 172.41.111.120
+    uplink: Switch-3
+    source_switch: Switch-4
+    column: 6
+    bay: Bay-6
+    section: LMS
+  - name: OFMK-4635
+    ip: 172.41.112.112
+    gateway: 172.41.113.112
+    kiosk_pc: 172.41.111.112
+    uplink: Switch-3
+    source_switch: Switch-4
+    column: 6
+    bay: Bay-6
+    section: LMS
+  - name: OFMK-4634
+    ip: 172.41.112.113
+    gateway: 172.41.113.113
+    kiosk_pc: 172.41.111.113
+    uplink: Switch-3
+    source_switch: Switch-4
+    column: 6
+    bay: Bay-6
+    section: LMS
+  - name: OFMK-4701
+    ip: 172.41.112.114
+    gateway: 172.41.113.114
+    kiosk_pc: 172.41.111.114
+    uplink: Switch-3
+    source_switch: Switch-4
+    column: 6
+    bay: Bay-6
+    section: LMS
+  - name: OFMK-4699
+    ip: 172.41.112.116
+    gateway: 172.41.113.116
+    kiosk_pc: 172.41.111.116
+    uplink: Switch-3
+    source_switch: Switch-4
+    column: 6
+    bay: Bay-6
+    section: LMS
+  - name: OFMK-4700
+    ip: 172.41.112.117
+    gateway: 172.41.113.117
+    kiosk_pc: 172.41.111.117
+    uplink: Switch-3
+    source_switch: Switch-4
+    column: 6
+    bay: Bay-6
+    section: LMS
+  - name: OFMK-4702
+    ip: 172.41.112.104
+    gateway: 172.41.113.104
+    kiosk_pc: 172.41.111.104
+    uplink: Switch-3
+    source_switch: Switch-4
+    column: 6
+    bay: Bay-6
+    section: LMS
+  - name: OFMK-4764
+    ip: 172.41.112.128
+    gateway: 172.41.113.128
+    kiosk_pc: 172.41.111.128
+    uplink: Switch-3
+    source_switch: Switch-4
+    column: 6
+    bay: Bay-6
+    section: LMS
+  - name: OFMK-4763
+    ip: 172.41.112.129
+    gateway: 172.41.113.129
+    kiosk_pc: 172.41.111.129
+    uplink: Switch-3
+    source_switch: Switch-4
+    column: 6
+    bay: Bay-6
+    section: LMS
+  - name: OFMK-4629
+    ip: 172.41.112.131
+    gateway: 172.41.113.131
+    kiosk_pc: 172.41.111.131
+    uplink: Switch-3
+    source_switch: Switch-4
+    column: 6
+    bay: Bay-6
+    section: LMS
+  - name: OFMK-4540
+    ip: 172.41.112.133
+    gateway: 172.41.113.133
+    kiosk_pc: 172.41.111.133
+    uplink: Switch-3
+    source_switch: Switch-4
+    column: 6
+    bay: Bay-6
+    section: LMS
+  - name: OFMK-4533
+    ip: 172.41.112.111
+    gateway: 172.41.113.111
+    kiosk_pc: 172.41.111.111
+    uplink: Switch-3
+    source_switch: Switch-4
+    column: 6
+    bay: Bay-6
+    section: LMS
+  - name: OFMK-4539
+    ip: 172.41.112.107
+    gateway: 172.41.113.107
+    kiosk_pc: 172.41.111.107
+    uplink: Switch-3
+    source_switch: Switch-4
+    column: 6
+    bay: Bay-6
+    section: LMS
+  - name: OFMK-4537
+    ip: 172.41.112.108
+    gateway: 172.41.113.108
+    kiosk_pc: 172.41.111.108
+    uplink: Switch-3
+    source_switch: Switch-4
+    column: 6
+    bay: Bay-6
+    section: LMS
+  - name: OFMK-4535
+    ip: 172.41.112.109
+    gateway: 172.41.113.109
+    kiosk_pc: 172.41.111.109
+    uplink: Switch-3
+    source_switch: Switch-4
+    column: 6
+    bay: Bay-6
+    section: LMS
+  - name: OFMK-4587
+    ip: 172.41.112.125
+    gateway: 172.41.113.125
+    kiosk_pc: 172.41.111.125
+    uplink: Switch-3
+    source_switch: Switch-4
+    column: 6
+    bay: Bay-6
+    section: LMS
+  - name: OFMK-4754
+    ip: 172.41.112.118
+    gateway: 172.41.113.118
+    kiosk_pc: 172.41.111.118
+    uplink: Switch-3
+    source_switch: Switch-4
+    column: 6
+    bay: Bay-6
+    section: LMS
+  - name: OFMK-4649
+    ip: 172.41.112.110
+    gateway: 172.41.113.110
+    kiosk_pc: 172.41.111.110
+    uplink: Switch-3
+    source_switch: Switch-4
+    column: 6
+    bay: Bay-6
+    section: LMS
+  - name: OFMK-4744
+    ip: 172.41.112.132
+    gateway: 172.41.113.132
+    kiosk_pc: 172.41.111.132
+    uplink: Switch-3
+    source_switch: Switch-4
+    column: 6
+    bay: Bay-6
+    section: LMS
+  - name: OFMK-4665
+    ip: 172.41.112.119
+    gateway: 172.41.113.119
+    kiosk_pc: 172.41.111.119
+    uplink: Switch-3
+    source_switch: Switch-4
+    column: 6
+    bay: Bay-6
+    section: LMS
+  - name: OFMK-4667
+    ip: 172.41.112.105
+    gateway: 172.41.113.105
+    kiosk_pc: 172.41.111.105
+    uplink: Switch-3
+    source_switch: Switch-4
+    column: 6
+    bay: Bay-6
+    section: LMS
+  - name: OFMK-4746
+    ip: 172.41.112.106
+    gateway: 172.41.113.106
+    kiosk_pc: 172.41.111.106
+    uplink: Switch-3
+    source_switch: Switch-4
+    column: 6
+    bay: Bay-6
+    section: LMS
+  - name: OFMK-4852
+    ip: 172.41.112.103
+    gateway: 172.41.113.103
+    kiosk_pc: 172.41.111.103
+    uplink: Switch-3
+    source_switch: Switch-4
+    column: 6
+    bay: Bay-6
+    section: LMS
+  - name: OFMK-4787
+    ip: 172.41.112.10
+    gateway: 172.41.113.10
+    kiosk_pc: 172.41.111.10
+    uplink: Switch-3
+    source_switch: Switch-4
+    column: 6
+    bay: Bay-6
+    section: LMS
+  - name: OFMK-4813
+    ip: 172.41.112.10
+    gateway: 172.41.113.10
+    kiosk_pc: 172.41.111.10
+    uplink: Switch-3
+    source_switch: Switch-4
+    column: 6
+    bay: Bay-6
+    section: LMS
+  - name: OFMK-4757
+    ip: 172.41.112.138
+    gateway: 172.41.113.138
+    kiosk_pc: 172.41.111.138
+    uplink: Switch-3
+    source_switch: Switch-4
+    column: 6
+    bay: Bay-6
+    section: LMS
+  - name: OFMK-4758
+    ip: 172.41.112.139
+    gateway: 172.41.113.139
+    kiosk_pc: 172.41.111.139
+    uplink: Switch-3
+    source_switch: Switch-4
+    column: 6
+    bay: Bay-6
+    section: LMS
+  - name: OFMK-4628
+    ip: 172.41.112.137
+    gateway: 172.41.113.137
+    kiosk_pc: 172.41.111.137
+    uplink: Switch-3
+    source_switch: Switch-4
+    column: 6
+    bay: Bay-6
+    section: LMS
+  - name: OFMK-4816
+    ip: 172.41.112.10
+    gateway: 172.41.113.10
+    kiosk_pc: 172.41.111.10
+    uplink: Switch-3
+    source_switch: Switch-4
+    column: 6
+    bay: Bay-6
+    section: LMS
+  - name: OFMK-4815
+    ip: 172.41.112.141
+    gateway: 172.41.113.141
+    kiosk_pc: 172.41.111.141
+    uplink: Switch-3
+    source_switch: Switch-4
+    column: 6
+    bay: Bay-6
+    section: LMS
+  - name: OFMK-4999
+    ip: 172.41.112.10
+    gateway: 172.41.113.10
+    kiosk_pc: 172.41.111.10
+    uplink: Switch-3
+    source_switch: Switch-4
+    column: 6
+    bay: Bay-6
+    section: LMS
+  - name: OFMK-4959
+    ip: 172.41.112.10
+    gateway: 172.41.113.10
+    kiosk_pc: 172.41.111.10
+    uplink: Switch-3
+    source_switch: Switch-4
+    column: 6
+    bay: Bay-6
+    section: LMS
+  - name: OFMK-4958
+    ip: 172.41.112.115
+    gateway: 172.41.113.115
+    kiosk_pc: 172.41.111.115
+    uplink: Switch-3
+    source_switch: Switch-4
+    column: 6
+    bay: Bay-6
+    section: LMS
+  - name: OFMK-4611
+    ip: 172.41.112.25
+    gateway: 172.41.113.25
+    kiosk_pc: 172.41.111.25
+    uplink: Switch-3
+    source_switch: Switch-4
+    column: 6
+    bay: Bay-6
+    section: DieShop
+  - name: OFMK-4848
+    ip: 172.41.112.26
+    gateway: 172.41.113.26
+    kiosk_pc: 172.41.111.26
+    uplink: Switch-3
+    source_switch: Switch-4
+    column: 6
+    bay: Bay-6
+    section: DieShop
+  - name: OFMK-4886
+    ip: 172.41.112.27
+    gateway: 172.41.113.27
+    kiosk_pc: 172.41.111.27
+    uplink: Switch-3
+    source_switch: Switch-4
+    column: 6
+    bay: Bay-6
+    section: DieShop
+  - name: OFMK-5071
+    ip: 172.41.112.28
+    gateway: 172.41.113.28
+    kiosk_pc: 172.41.111.28
+    uplink: Switch-3
+    source_switch: Switch-4
+    column: 6
+    bay: Bay-6
+    section: DieShop
+  - name: OFMK-4631
+    ip: 172.41.112.22
+    gateway: 172.41.113.22
+    kiosk_pc: 172.41.111.22
+    uplink: Switch-3
+    source_switch: Switch-4
+    column: 6
+    bay: Bay-6
+    section: Foundry
+  - name: OFMK-4632
+    ip: 172.41.112.23
+    gateway: 172.41.113.23
+    kiosk_pc: 172.41.111.23
+    uplink: Switch-3
+    source_switch: Switch-4
+    column: 6
+    bay: Bay-6
+    section: Foundry
+  - name: OFMK-4633
+    ip: 172.41.112.24
+    gateway: 172.41.113.24
+    kiosk_pc: 172.41.111.24
+    uplink: Switch-3
+    source_switch: Switch-4
+    column: 6
+    bay: Bay-6
+    section: Foundry
