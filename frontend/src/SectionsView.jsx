@@ -184,12 +184,12 @@ export default function SectionsView() {
         
         Object.keys(layout).forEach(section => {
             // Ensure Main Switch position (A1) is available
-            if (!layout[section]['A']) layout[section]['A'] = {};
-            if (!layout[section]['A'][1]) layout[section]['A'][1] = [];
-        });
+   if (!layout[section]['A']) layout[section]['A'] = {};
+              if (!layout[section]['A'][1]) layout[section]['A'][1] = [];
+          });
     
-        return layout;
-      }, [machines, switches]);
+         return layout;
+      }, [machines, switches]);
 
 
   // --- Helper Functions ---
