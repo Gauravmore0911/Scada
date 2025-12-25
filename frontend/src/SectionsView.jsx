@@ -1,5 +1,5 @@
 // SectionsView.jsx (Final Grid Layout with Active Status in Modal)
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useEffect, useMemo, useState, useRef } from "react";
 import { useNavigate, useSearchParams, useParams } from "react-router-dom";
 import { socket, SOCKET_URL } from "./socket.jsx";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -9,13 +9,12 @@ const BLINK_KEYFRAMES = `
   @keyframes blink {
     0%, 100% { opacity: 1; }
     50% { opacity: 0.3; }
-  }
-`;
+  }`;
 
 // --- StatusDot Component (Still needed for the grid view) ---
 const StatusDot = ({ color }) => {
   const bg = color === "green" ? "#28a745" : color === "orange" ? "#fd7e14" : "#dc3545";
-  const isBlinking = color === 'green' || color === 'red';
+  const isBlinking = color === 'green' || color === 'red' || color === 'orange';
 
   const blinkStyle = isBlinking
     ? {
@@ -45,9 +44,9 @@ const StatusDot = ({ color }) => {
 };
 
 // --- Switch Info Parser (Unchanged) ---
-const parseSwitchInfo = (uplink) => {
-  if (!uplink) return null;
-  const match = uplink.match(/^([A-Z])(\d+)-(\d+)$/i);
+const parseSwitchInfo = (source_switch) => {
+  if (!source_switch) return null;
+  const match = source_switch.match(/^([A-Z])(\d+)-(\d+)$/i);
   if (!match) return null;
   return {
     bay: match[1].toUpperCase(),
@@ -73,12 +72,17 @@ const machineCardHoverStyle = {
 export default function SectionsView() {
   const [machines, setMachines] = useState([]);
   const [selectedMachine, setSelectedMachine] = useState(null);
-  const [hoveredMachineName, setHoveredMachineName] = useState(null); 
+  const [hoveredMachineName, setHoveredMachineName] = useState(null);
+  const [arrows, setArrows] = useState([]);
   const [searchParams] = useSearchParams();
   const { section: sectionParam } = useParams();
   const navigate = useNavigate();
-  
-  const MAX_COLUMNS = 50; 
+
+  const machineRefs = useRef({});
+  const switchRefs = useRef({});
+  const sectionRefs = useRef({});
+
+  const MAX_COLUMNS = 50;
 
   useEffect(() => {
     const API_BASE = SOCKET_URL === "/" ? "" : SOCKET_URL;
@@ -105,44 +109,86 @@ export default function SectionsView() {
   }, [selectedMachine]);
 
 
-  /** 1. Generate Switches Automatically from uplink (Unchanged) */
+  /** 1. Generate Switches Automatically from source_switch (Unchanged) */
   const switches = useMemo(() => {
     const map = {};
-    const sections = new Set(); 
+    const sections = new Set();
 
     machines.forEach((m) => {
       if (m.section) sections.add(m.section);
-      
-      const sw = parseSwitchInfo(m.uplink);
+
+      const sw = parseSwitchInfo(m.source_switch);
       if (!sw) return;
 
-      if (!map[m.uplink]) {
-        map[m.uplink] = {
-          id: m.uplink,
+      if (!map[m.source_switch]) {
+        map[m.source_switch] = {
+          id: m.source_switch,
           bay: sw.bay,
           column: sw.column,
           ports: sw.ports,
           connected: [],
-          section: m.section 
+          section: m.section
         };
       }
-      map[m.uplink].connected.push(m);
+      map[m.source_switch].connected.push(m);
     });
 
     sections.forEach(sectionName => {
       const mainSwitchId = `${sectionName}_MAIN`;
       map[mainSwitchId] = {
         id: "MAIN SWITCH",
-        bay: "A",       
-        column: 1,      
+        bay: "A",
+        column: 1,
         ports: 'N/A',
         section: sectionName,
-        connected: [], 
+        connected: [],
       };
     });
 
     return map;
   }, [machines]);
+
+  useEffect(() => {
+    const newArrows = [];
+    Object.keys(sectionRefs.current).forEach(section => {
+      const sectionEl = sectionRefs.current[section];
+      if (!sectionEl) return;
+      const sectionRect = sectionEl.getBoundingClientRect();
+      const mainSwitchId = `${section}_MAIN`;
+      const mainSwitchEl = switchRefs.current[mainSwitchId];
+      if (!mainSwitchEl) return;
+      const mainRect = mainSwitchEl.getBoundingClientRect();
+      Object.values(switches).forEach(sw => {
+        if (sw.section === section && sw.id !== "MAIN SWITCH") {
+          const switchEl = switchRefs.current[sw.id];
+          if (switchEl) {
+            const switchRect = switchEl.getBoundingClientRect();
+            newArrows.push({
+              from: { x: switchRect.left + switchRect.width / 2 - sectionRect.left, y: switchRect.top + switchRect.height / 2 - sectionRect.top },
+              to: { x: mainRect.left + mainRect.width / 2 - sectionRect.left, y: mainRect.top + mainRect.height / 2 - sectionRect.top },
+              color: 'red'
+            });
+          }
+        }
+      });
+      machines.forEach(m => {
+        if (m.section === section) {
+          const machineEl = machineRefs.current[m.name];
+          const switchEl = switchRefs.current[m.source_switch];
+          if (machineEl && switchEl) {
+            const machineRect = machineEl.getBoundingClientRect();
+            const switchRect = switchEl.getBoundingClientRect();
+            newArrows.push({
+              from: { x: machineRect.left + machineRect.width / 2 - sectionRect.left, y: machineRect.top + machineRect.height / 2 - sectionRect.top },
+              to: { x: switchRect.left + switchRect.width / 2 - sectionRect.left, y: switchRect.top + switchRect.height / 2 - sectionRect.top },
+              color: 'blue'
+            });
+          }
+        }
+      });
+    });
+    setArrows(newArrows);
+  }, [machines, switches]);
 
 
   /** 2. Organize into GRID (Unchanged) */
@@ -306,10 +352,10 @@ export default function SectionsView() {
       </div>
 
       {/* Section Loop - Renders one table per section */}
-      {Object.entries(grid).map(([section, bays]) => 
+      {Object.entries(grid).map(([section, bays]) =>
         (!selectedSection || section === selectedSection) && (
-        <div key={section} className="mb-5 p-3 rounded-3 shadow-sm bg-light">
-          <h4 className="fw-bolder text-dark mb-3 border-bottom pb-2">
+        <div key={section} ref={el => sectionRefs.current[section] = el} className="mb-5 p-5 rounded-3 shadow-sm bg-light">
+          <h4 className="fw-bolder text-dark mb-5 border-bottom pb-2">
             <i className="bi bi-building me-2 text-primary"></i>SECTION: {section}
           </h4>
 
@@ -379,9 +425,10 @@ export default function SectionsView() {
                           {/* ✅ Show Switch */}
                           {switchHere && (
                             <div
+                              ref={el => switchRefs.current[switchHere.id] = el}
                               className={
                                 switchHere.id === "MAIN SWITCH"
-                                  ? "p-1 bg-danger text-white rounded border mb-2 fw-bolder shadow-lg" 
+                                  ? "p-1 bg-danger text-white rounded border mb-2 fw-bolder shadow-lg"
                                   : "p-1 bg-info text-dark rounded border border-dark mb-2 fw-bold shadow-sm"
                               }
                               style={{ fontSize: "11px" }}
@@ -405,10 +452,11 @@ export default function SectionsView() {
                             items.map((m) => (
                               <div
                                 key={m.name}
+                                ref={el => machineRefs.current[m.name] = el}
                                 onClick={() => setSelectedMachine(m)}
                                 onMouseEnter={() => setHoveredMachineName(m.name)}
                                 onMouseLeave={() => setHoveredMachineName(null)}
-                                className="p-2 bg-white rounded border mb-1 d-flex align-items-center justify-content-between shadow-sm"
+                                className="p-2 bg-white rounded border mb-3 d-flex align-items-center justify-content-between shadow-sm"
                                 style={
                                     hoveredMachineName === m.name
                                       ? { ...machineCardStyle, ...machineCardHoverStyle, borderColor: '#007bff' }
@@ -427,6 +475,47 @@ export default function SectionsView() {
               </tbody>
             </table>
           </div>
+
+          {/* SVG Overlay for Arrows */}
+          <svg
+            style={{
+              position: 'absolute',
+              top: 0,
+              left: 0,
+              width: '100%',
+              height: '100%',
+              pointerEvents: 'none',
+              zIndex: 10,
+            }}
+          >
+            {arrows.map((arrow, index) => (
+              <line
+                key={index}
+                x1={arrow.from.x}
+                y1={arrow.from.y}
+                x2={arrow.to.x}
+                y2={arrow.to.y}
+                stroke={arrow.color}
+                strokeWidth="2"
+                markerEnd="url(#arrowhead)"
+              />
+            ))}
+            <defs>
+              <marker
+                id="arrowhead"
+                markerWidth="10"
+                markerHeight="7"
+                refX="9"
+                refY="3.5"
+                orient="auto"
+              >
+                <polygon
+                  points="0 0, 10 3.5, 0 7"
+                  fill="currentColor"
+                />
+              </marker>
+            </defs>
+          </svg>
         </div>
       ))}
 

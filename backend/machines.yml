@@ -4,7 +4,7 @@ machines:
     gateway: 172.41.113.205
     kiosk_pc: 172.41.111.205
     uplink: A12-5
-    source_switch: A3-5
+    source_switch: A23-5
     column: 3
     bay: A
     machine_row: A
@@ -18,21 +18,23 @@ machines:
     source_switch: Switch-2
     column: 5
     bay: Bay-5
-    section: HTM
+    section: Pending
   - name: OFMK-1731
     ip: 172.41.112.201
     gateway: 172.41.113.201
     kiosk_pc: 172.41.111.201
-    uplink: B15-5
-    source_switch: B8-8
+    uplink: A10-5
+    source_switch: B16-8
     column: 8
     bay: B
+    machine_row: B
+    machine_column: 19
     section: HTM
   - name: OFMK-2328
     ip: 172.41.112.202
     gateway: 172.41.113.202
     kiosk_pc: 172.41.111.202
-    uplink: A12-5
+    uplink: A23-5
     source_switch: A3-5
     column: 3
     bay: A
@@ -43,19 +45,23 @@ machines:
     ip: 172.41.112.203
     gateway: 172.41.113.203
     kiosk_pc: 172.41.111.203
-    uplink: HTMG1
-    source_switch: B22-5
+    uplink: A3-5
+    source_switch: B4-8
     column: 22
     bay: B
+    machine_row: A
+    machine_column: 2
     section: HTM
   - name: OFMK-4630
     ip: 172.41.112.204
     gateway: 172.41.113.204
     kiosk_pc: 172.41.111.204
-    uplink: Switch-3
-    source_switch: Switch-4
-    column: 6
-    bay: Bay-6
+    uplink: HTMG1
+    source_switch: A2-5
+    column: 2
+    bay: A
+    machine_row: A
+    machine_column: 2
     section: HTM
   - name: OFMK-4633
     ip: 172.41.112.205
@@ -65,21 +71,23 @@ machines:
     source_switch: Switch-4
     column: 6
     bay: Bay-6
-    section: HTM
+    section: Pending
   - name: OFMK-4777
     ip: 172.41.112.206
     gateway: 172.41.113.206
     kiosk_pc: 172.41.111.206
     uplink: A18-5
-    source_switch: A15-5
+    source_switch: A9-5
     column: 15
     bay: A
+    machine_row: A
+    machine_column: 10
     section: HTM
   - name: OFMK-4784
     ip: 172.41.112.207
     gateway: 172.41.113.207
     kiosk_pc: 172.41.111.207
-    uplink: A12-5
+    uplink: A23-5
     source_switch: A3-5
     column: 3
     bay: A
@@ -90,19 +98,23 @@ machines:
     ip: 172.41.112.208
     gateway: 172.41.113.208
     kiosk_pc: 172.41.111.208
-    uplink: HTMG1
-    source_switch: B22-5
+    uplink: A3-5
+    source_switch: B4-8
     column: 22
     bay: B
+    machine_row: A
+    machine_column: 3
     section: HTM
   - name: OFMK-4827
     ip: 172.41.112.209
     gateway: 172.41.113.209
     kiosk_pc: 172.41.111.209
     uplink: A18-5
-    source_switch: A15-5
+    source_switch: A9-5
     column: 15
     bay: A
+    machine_row: A
+    machine_column: 8
     section: HTM
   - name: OFMK-4828
     ip: 172.41.112.210
@@ -112,150 +124,184 @@ machines:
     source_switch: C8-5
     column: 8
     bay: C
+    machine_row: B
+    machine_column: 14
     section: HTM
   - name: OFMK-4831
     ip: 172.41.112.211
     gateway: 172.41.113.211
     kiosk_pc: 172.41.111.211
-    uplink: B15-5
-    source_switch: B8-8
+    uplink: A10-5
+    source_switch: B16-8
     column: 8
     bay: B
+    machine_row: B
+    machine_column: 22
     section: HTM
   - name: OFMK-4832
     ip: 172.41.112.212
     gateway: 172.41.113.212
     kiosk_pc: 172.41.111.212
-    uplink: B15-5
-    source_switch: B8-8
+    uplink: A10-5
+    source_switch: B16-8
     column: 8
     bay: B
+    machine_row: A
+    machine_column: 14
     section: HTM
   - name: OFMK-4851
     ip: 172.41.112.213
     gateway: 172.41.113.213
     kiosk_pc: 172.41.111.213
-    uplink: B15-5
-    source_switch: B8-8
+    uplink: A10-5
+    source_switch: B16-8
     column: 8
     bay: B
+    machine_row: A
+    machine_column: 13
     section: HTM
   - name: OFMK-4853
     ip: 172.41.112.214
     gateway: 172.41.113.214
     kiosk_pc: 172.41.111.214
-    uplink: A15-5
-    source_switch: B15-5
+    uplink: A9-5
+    source_switch: A10-5
     column: B
-    bay: 15
+    machine_row: A
+    machine_column: 10
+    bay: B
     section: HTM
   - name: OFMK-4900
     ip: 172.41.112.215
     gateway: 172.41.113.215
     kiosk_pc: 172.41.111.215
-    uplink: HTMG1
-    source_switch: B22-5
+    uplink: A3-5
+    source_switch: B4-8
     column: 22
     bay: B
+    machine_row: A
+    machine_column: 5
     section: HTM
   - name: OFMK-4901
     ip: 172.41.112.216
     gateway: 172.41.113.216
     kiosk_pc: 172.41.111.216
-    uplink: B15-5
-    source_switch: B8-8
+    uplink: A10-5
+    source_switch: B16-8
     column: 8
     bay: B
+    machine_row: B
+    machine_column: 15
     section: HTM
   - name: OFMK-4902
     ip: 172.41.112.217
     gateway: 172.41.113.217
     kiosk_pc: 172.41.111.217
     uplink: A15-5
-    source_switch: A12-5
+    source_switch: A13-5
     column: 12
     bay: A
+    machine_row: A
+    machine_column: 11
     section: HTM
   - name: OFMK-4915
     ip: 172.41.112.218
     gateway: 172.41.113.218
     kiosk_pc: 172.41.111.218
     uplink: HTMG1
-    source_switch: A22-5
-    column: 22
+    source_switch: A2-5
+    column: 2
     bay: A
+    machine_row: A
+    machine_column: 4
     section: HTM
   - name: OFMK-4916
     ip: 172.41.112.219
     gateway: 172.41.113.219
     kiosk_pc: 172.41.111.219
-    uplink: B15-5
-    source_switch: B8-8
+    uplink: A10-5
+    source_switch: B16-8
     column: 8
     bay: B
+    machine_row: B
+    machine_column: 13
     section: HTM
   - name: OFMK-4917
     ip: 172.41.112.220
     gateway: 172.41.113.220
     kiosk_pc: 172.41.111.220
-    uplink: HTMG1
-    source_switch: B22-5
+    uplink: A3-5
+    source_switch: B4-8
     column: 22
     bay: B
+    machine_row: A
+    machine_column: 4
     section: HTM
   - name: OFMK-4928
     ip: 172.41.112.221
     gateway: 172.41.113.221
     kiosk_pc: 172.41.111.221
-    uplink: Switch-3
-    source_switch: Switch-4
-    column: 6
+    uplink: HTMG1
+    source_switch: A2-5
+    column: 2
     bay: Bay-6
+    machine_row: A
+    machine_column: 3
     section: HTM
   - name: OFMK-4929
     ip: 172.41.112.222
     gateway: 172.41.113.222
     kiosk_pc: 172.41.111.222
     uplink: A22-5
-    source_switch: A18-5
+    source_switch: A7-5
     column: 18
     bay: A
+    machine_row: A
+    machine_column: 7
     section: HTM
   - name: OFMK-4930
     ip: 172.41.112.223
     gateway: 172.41.113.223
     kiosk_pc: 172.41.111.223
     uplink: A15-5
-    source_switch: A12-5
+    source_switch: A13-5
     column: 12
     bay: A
+    machine_row: A
+    machine_column: 13
     section: HTM
   - name: OFMK-4961
     ip: 172.41.112.224
     gateway: 172.41.113.224
     kiosk_pc: 172.41.111.224
     uplink: A15-5
-    source_switch: A12-5
+    source_switch: A13-5
     column: 12
     bay: A
+    machine_row: A
+    machine_column: 12
     section: HTM
   - name: OFMK-5123
     ip: 172.41.112.225
     gateway: 172.41.113.225
     kiosk_pc: 172.41.111.225
     uplink: A18-5
-    source_switch: A15-5
+    source_switch: A7-5
     column: 15
     bay: A
+    machine_row: A
+    machine_column: 6
     section: HTM
   - name: OFMK-NEWASKAR
     ip: 172.41.112.226
     gateway: 172.41.113.226
     kiosk_pc: 172.41.111.226
-    uplink: B8-8
+    uplink: B16-8
     source_switch: C8-5
     column: 8
     bay: C
+    machine_row: B
+    machine_column: 11
     section: HTM
   - name: OFMK-4747
     ip: 172.41.112.21
@@ -391,7 +437,9 @@ machines:
     source_switch: E17-5
     column: 17
     bay: E
-    section: Hull
+    machine_row: E
+    machine_column: 5
+    section: HTM
   - name: OFMK-2705RH
     ip: 172.41.112.228
     gateway: 172.41.113.228
@@ -400,7 +448,9 @@ machines:
     source_switch: E17-5
     column: 17
     bay: E
-    section: Hull
+    machine_row: E
+    machine_column: 5
+    section: HTM
   - name: OFMK-2706LH
     ip: 172.41.112.229
     gateway: 172.41.113.229
@@ -409,7 +459,9 @@ machines:
     source_switch: D14-5
     column: 14
     bay: D
-    section: Hull
+    machine_row: D
+    machine_column: 9
+    section: HTM
   - name: OFMK-2706RH
     ip: 172.41.112.230
     gateway: 172.41.113.230
@@ -418,7 +470,9 @@ machines:
     source_switch: D14-5
     column: 14
     bay: D
-    section: Hull
+    machine_row: D
+    machine_column: 9
+    section: HTM
   - name: OFMK-1209LH
     ip: 172.41.112.231
     gateway: 172.41.113.231
@@ -427,7 +481,9 @@ machines:
     source_switch: D7-5
     column: 7
     bay: D
-    section: Hull
+    machine_row: D
+    machine_column: 18
+    section: HTM
   - name: OFMK-1209RH
     ip: 172.41.112.232
     gateway: 172.41.113.232
@@ -436,7 +492,9 @@ machines:
     source_switch: D7-5
     column: 7
     bay: D
-    section: Hull
+    machine_row: D
+    machine_column: 18
+    section: HTM
   - name: OFMK-2060
     ip: 172.41.112.233
     gateway: 172.41.113.233
@@ -445,7 +503,9 @@ machines:
     source_switch: D14-5
     column: 14
     bay: D
-    section: Hull
+    machine_row: D
+    machine_column: 11
+    section: HTM
   - name: OFMK-2108
     ip: 172.41.112.234
     gateway: 172.41.113.234
@@ -454,7 +514,9 @@ machines:
     source_switch: H5-5
     column: 5
     bay: H
-    section: Turret
+    machine_row: G
+    machine_column: 20
+    section: HTM
   - name: OFMK-2109
     ip: 172.41.112.235
     gateway: 172.41.113.235
@@ -463,7 +525,9 @@ machines:
     source_switch: H5-5
     column: 5
     bay: H
-    section: Turret
+    machine_row: G
+    machine_column: 24
+    section: HTM
   - name: OFMK-2584
     ip: 172.41.112.236
     gateway: 172.41.113.236
@@ -472,7 +536,9 @@ machines:
     source_switch: G5-5
     column: 5
     bay: G
-    section: Turret
+    machine_row: G
+    machine_column: 21
+    section: HTM
   - name: OFMK-3090
     ip: 172.41.112.237
     gateway: 172.41.113.237
@@ -481,7 +547,9 @@ machines:
     source_switch: G5-5
     column: 5
     bay: G
-    section: Turret
+    machine_row: G
+    machine_column: 23
+    section: HTM
   - name: OFMK-4474
     ip: 172.41.112.238
     gateway: 172.41.113.238
@@ -490,7 +558,9 @@ machines:
     source_switch: G5-5
     column: 5
     bay: G
-    section: Turret
+    machine_row: G
+    machine_column: 19
+    section: HTM
   - name: OFMK-4361
     ip: 172.41.112.239
     gateway: 172.41.113.239
@@ -498,8 +568,10 @@ machines:
     uplink: Switch-3
     source_switch: Switch-4
     column: 6
-    bay: Bay-6
-    section: Turret
+    bay: H
+    machine_row: H
+    machine_column: 19
+    section: HTM
   - name: OFMK-4668
     ip: 172.41.112.126
     gateway: 172.41.113.126
