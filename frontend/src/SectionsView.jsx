@@ -73,7 +73,6 @@ export default function SectionsView() {
   const [machines, setMachines] = useState([]);
   const [selectedMachine, setSelectedMachine] = useState(null);
   const [hoveredMachineName, setHoveredMachineName] = useState(null);
-  const [arrows, setArrows] = useState([]);
   const [searchParams] = useSearchParams();
   const { section: sectionParam } = useParams();
   const navigate = useNavigate();
@@ -117,20 +116,41 @@ export default function SectionsView() {
     machines.forEach((m) => {
       if (m.section) sections.add(m.section);
 
+      // 1. Ensure Source Switch exists
       const sw = parseSwitchInfo(m.source_switch);
-      if (!sw) return;
+      if (sw) {
+        if (!map[m.source_switch]) {
+          map[m.source_switch] = {
+            id: m.source_switch,
+            bay: sw.bay,
+            column: sw.column,
+            ports: sw.ports,
+            connected: [],
+            section: m.section,
+            uplink: m.uplink,
+            uplink_line_color: m.uplink_line_color
+          };
+        } else {
+          map[m.source_switch].uplink = m.uplink;
+          map[m.source_switch].uplink_line_color = m.uplink_line_color;
+        }
+        map[m.source_switch].connected.push(m);
+      }
 
-      if (!map[m.source_switch]) {
-        map[m.source_switch] = {
-          id: m.source_switch,
-          bay: sw.bay,
-          column: sw.column,
-          ports: sw.ports,
+      // 2. Ensure Uplink Switch exists (so it can be rendered as a target)
+      const upSw = parseSwitchInfo(m.uplink);
+      if (upSw && !map[m.uplink]) {
+        map[m.uplink] = {
+          id: m.uplink,
+          bay: upSw.bay,
+          column: upSw.column,
+          ports: upSw.ports,
           connected: [],
-          section: m.section
+          section: m.section,
+          uplink: null,
+          uplink_line_color: null
         };
       }
-      map[m.source_switch].connected.push(m);
     });
 
     sections.forEach(sectionName => {
@@ -147,48 +167,6 @@ export default function SectionsView() {
 
     return map;
   }, [machines]);
-
-  useEffect(() => {
-    const newArrows = [];
-    Object.keys(sectionRefs.current).forEach(section => {
-      const sectionEl = sectionRefs.current[section];
-      if (!sectionEl) return;
-      const sectionRect = sectionEl.getBoundingClientRect();
-      const mainSwitchId = `${section}_MAIN`;
-      const mainSwitchEl = switchRefs.current[mainSwitchId];
-      if (!mainSwitchEl) return;
-      const mainRect = mainSwitchEl.getBoundingClientRect();
-      Object.values(switches).forEach(sw => {
-        if (sw.section === section && sw.id !== "MAIN SWITCH") {
-          const switchEl = switchRefs.current[sw.id];
-          if (switchEl) {
-            const switchRect = switchEl.getBoundingClientRect();
-            newArrows.push({
-              from: { x: switchRect.left + switchRect.width / 2 - sectionRect.left, y: switchRect.top + switchRect.height / 2 - sectionRect.top },
-              to: { x: mainRect.left + mainRect.width / 2 - sectionRect.left, y: mainRect.top + mainRect.height / 2 - sectionRect.top },
-              color: 'red'
-            });
-          }
-        }
-      });
-      machines.forEach(m => {
-        if (m.section === section) {
-          const machineEl = machineRefs.current[m.name];
-          const switchEl = switchRefs.current[m.source_switch];
-          if (machineEl && switchEl) {
-            const machineRect = machineEl.getBoundingClientRect();
-            const switchRect = switchEl.getBoundingClientRect();
-            newArrows.push({
-              from: { x: machineRect.left + machineRect.width / 2 - sectionRect.left, y: machineRect.top + machineRect.height / 2 - sectionRect.top },
-              to: { x: switchRect.left + switchRect.width / 2 - sectionRect.left, y: switchRect.top + switchRect.height / 2 - sectionRect.top },
-              color: 'blue'
-            });
-          }
-        }
-      });
-    });
-    setArrows(newArrows);
-  }, [machines, switches]);
 
 
   /** 2. Organize into GRID (Unchanged) */
@@ -354,7 +332,7 @@ export default function SectionsView() {
       {/* Section Loop - Renders one table per section */}
       {Object.entries(grid).map(([section, bays]) =>
         (!selectedSection || section === selectedSection) && (
-        <div key={section} ref={el => sectionRefs.current[section] = el} className="mb-5 p-5 rounded-3 shadow-sm bg-light">
+        <div key={section} ref={el => sectionRefs.current[section] = el} className="mb-5 p-5 rounded-3 shadow-sm bg-light" style={{ position: 'relative' }}>
           <h4 className="fw-bolder text-dark mb-5 border-bottom pb-2">
             <i className="bi bi-building me-2 text-primary"></i>SECTION: {section}
           </h4>
@@ -425,7 +403,7 @@ export default function SectionsView() {
                           {/* ✅ Show Switch */}
                           {switchHere && (
                             <div
-                              ref={el => switchRefs.current[switchHere.id] = el}
+                              ref={el => switchRefs.current[switchHere.id === "MAIN SWITCH" ? `${section}_MAIN` : switchHere.id] = el}
                               className={
                                 switchHere.id === "MAIN SWITCH"
                                   ? "p-1 bg-danger text-white rounded border mb-2 fw-bolder shadow-lg"
@@ -475,47 +453,6 @@ export default function SectionsView() {
               </tbody>
             </table>
           </div>
-
-          {/* SVG Overlay for Arrows */}
-          <svg
-            style={{
-              position: 'absolute',
-              top: 0,
-              left: 0,
-              width: '100%',
-              height: '100%',
-              pointerEvents: 'none',
-              zIndex: 10,
-            }}
-          >
-            {arrows.map((arrow, index) => (
-              <line
-                key={index}
-                x1={arrow.from.x}
-                y1={arrow.from.y}
-                x2={arrow.to.x}
-                y2={arrow.to.y}
-                stroke={arrow.color}
-                strokeWidth="2"
-                markerEnd="url(#arrowhead)"
-              />
-            ))}
-            <defs>
-              <marker
-                id="arrowhead"
-                markerWidth="10"
-                markerHeight="7"
-                refX="9"
-                refY="3.5"
-                orient="auto"
-              >
-                <polygon
-                  points="0 0, 10 3.5, 0 7"
-                  fill="currentColor"
-                />
-              </marker>
-            </defs>
-          </svg>
         </div>
       ))}
 
